@@ -1,0 +1,101 @@
+~ start
+
+- so, how are you feeling?
+	Bean: [[I'm ok..|I feel horrible|[shake rate=20 level=10]I FEEL FANTASTIC![/shake]|Why the small talk?]]
+	you: okay..
+	Bean: why do you ask?
+	you: just wondering due to the situation you are in.
+	Bean: [[yeah..|okay..]]
+	you: is there anything you would like to talk about?
+	Bean: [[no, not really|You have no idea why I'm here.]]
+	you: uh okay..
+	you: would you like me to ask about the murder? or no?
+	Bean: just.. screw off
+	you: oh, okay..
+	- (say nothing)
+		you: (I should mark down how he reacted to me being Passive)
+		=> END
+	- (try and start conversation again)
+		you: did you know the people you killed?
+		Bean: [[yes.|[shake rate=20 level=10]SHUT UP OR I'LL KILL YOU TOO[/shake]|knowing them made their death so much sweeter.]]
+		you: ah, okay..
+		you: I'll stop pushing now.
+		you: (I should mark down how he reacted to me being Passive)
+		=> END
+
+
+- are you worried about anything?
+	Bean: [[dying..|no, why?|...]]
+	you: hmm, okay.
+	Bean: why are you asking?
+	you: no reason.
+	Bean: ..sure..
+	you: okay..
+	- is there anything you want to talk about?
+		Bean: no, not really
+		you: alright.
+		Bean: are you just gonna keep beating around the bush?
+		you: I'm just trying to know you.
+		Bean: I know why you're here
+		Bean: and it's not for that.
+		you: would you like to keep talking or is this you plan for the rest of it?
+		Bean: ...
+		you: okay, I'll leave you to it.
+		you: (I should mark down how he reacted to me being Passive)
+		=> END
+	
+	- are you feeling well?
+		Bean: [[no.|[shake rate=20 level=10]I FEEL GREAT[/shake]]]
+		you: ah, alright..
+		you: let's do a round of rock, paper, scissors
+		Bean: what?
+		you: come on let's play
+		Bean: uh, Okay?
+		- (Rock)
+			Bean: [[rock|paper|scissors]]
+		- (Paper)
+			Bean: [[rock|paper|scissors]]
+		- (Scissors)
+			Bean: [[rock|paper|scissors]]
+		you: okay, wasn't that nice?
+		Bean: Distracting yourself?
+		you: what no, I'm just trying to be positive
+		Bean: sure..
+		you: (I should mark down how he reacted to me being Passive)
+		=> END
+
+- What's your favorite thing to do?
+	Bean: [[I don't know|Not listening to you|[shake rate=20 level=10]MURDER![/shake]|I can't think about stuff like that right now.]]
+	you: ah, okay..
+	you: how was your childhood?
+	Bean: .....
+	you: are you okay?
+	%6 Bean: ...
+	%4 Bean: I... I don't want to talk about it
+	you: hmm, let's move on from that topic then.
+	you: did you have any major friends in your life?
+	Bean: I had one.
+	you: really, what were they like?
+	%9 Bean: I don't want to talk about it.
+	%1 Bean: they helped me get out of my mother's house.. But I don't really want to talk about it.
+	- That's okay.
+		Bean: ...
+		you: I'll leave you to it.
+		Bean: okay..
+		you: (I should mark down how he reacted to me being Passive)
+		=> END
+	
+	- You should tell me.
+		Bean: Why does it matter.
+		you: what are you talking about?
+		Bean: the info won't be useful to a rotting corpse
+		you: Are you talking about your friend?
+		you: or me?
+		Bean: [shake rate=20 level=10]TEMPUS NARRABIT[/shake]
+		you: I don't understand that
+		Bean: ...
+		you: hello?
+		you: (I should mark down how he reacted to me being Passive)
+		=> END
+
+=> END

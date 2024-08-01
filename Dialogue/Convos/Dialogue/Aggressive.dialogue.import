@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://cpa6rwj65rp4m"
+path="res://.godot/imported/Aggressive.dialogue-1e7c35f2ba68aae26d3f677a667005c8.tres"
+
+[deps]
+
+source_file="res://Dialogue/Aggressive.dialogue"
+dest_files=["res://.godot/imported/Aggressive.dialogue-1e7c35f2ba68aae26d3f677a667005c8.tres"]
+
+[params]
+
+defaults=true

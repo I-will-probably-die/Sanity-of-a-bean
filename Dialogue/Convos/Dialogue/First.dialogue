@@ -1,0 +1,69 @@
+~ start
+- Hello there
+	Bean: [[Hi..|Get on with it will yeah.|will.. will I die?]]
+	you: ...
+	you: okay we'll start with some questions.
+	- How are you feeling?
+		Bean: [[I don't know..|[shake rate=20 level=10]I'M DOING GREAT[/shake]|Fine I guess..|Screw off with your small talk]]
+		- Okay then
+			you: would you like to tell me why you did what you did?
+			Bean: ...
+			Bean: ... I rather not.
+			you: okay..
+			you: I'll give you some time.
+			you: (I should mark down how he reacted to me being neutral)
+			=> END
+		- ...
+			Bean: [[?|You gonna talk?]]
+			you: you know why you are here right?
+			Bean: [[Yeah..|yes but [shake rate=20 level=10]I'D DO IT AGAIN[/shake]]]
+			you: alright...
+			you: I'm gonna give you sometime by yourself.
+			Bean: okay.
+			you: (I should mark down how he reacted to me being neutral)
+			=> END
+	- why did you kill them?
+		Bean: ...
+		you: (he doesn't seem to be talking.)
+		- Hello?
+			Bean: ...
+			you: I'll come back when you want to talk, okay?
+			Bean: ..alright..
+			you: (I should mark down how he reacted to me being neutral)
+			=> END
+
+
+- Grettings Sir
+	Bean: [[Hello.|Stop trying to be professional.]]
+	you: ...
+	you: okay so we'll start with some questions.
+	Bean: ... okay.
+	- How are you feeling?
+		Bean: [[I don't know..|[shake rate=20 level=10]I'M DOING GREAT[/shake]|Fine I guess..|Screw off with your small talk]]
+		- Okay then
+			you: would you like to tell me why you did what you did?
+			Bean: ...
+			Bean: ...
+			you: I'll take that as a no
+			you: I'll give you some time.
+			you: (I should mark down how he reacted to me being neutral)
+			=> END
+		- ...
+			Bean: [[you there?|Looks like someone doesn't wanna talk]]
+			you: I'm gonna give you sometime by yourself
+			Bean: [[uh okay.|you are growing fearful, I can tell|Run off then, not like my life is on the line]]
+			you: ...
+			you: (I should mark down how he reacted to me being neutral)
+			=> END
+	- why did you kill them?
+		Bean: [[. . .|Shut up!]]
+		you: would you like to answer the question
+		Bean: ...
+		you: would you like to answer any questions?
+		Bean: ..no.
+		you: okay, I'll come back later
+		you: is that okay with you?
+		Bean: yeah, you're fine..
+		you: (I should mark down how he reacted to me being neutral)
+		=> END
+

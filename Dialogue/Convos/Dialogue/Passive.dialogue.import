@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://d2d2di7l1dsry"
+path="res://.godot/imported/Passive.dialogue-fe5dd830b044f042855cc3a3c9c25103.tres"
+
+[deps]
+
+source_file="res://Dialogue/Passive.dialogue"
+dest_files=["res://.godot/imported/Passive.dialogue-fe5dd830b044f042855cc3a3c9c25103.tres"]
+
+[params]
+
+defaults=true

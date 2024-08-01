@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://dcofrotdrmty3"
+path="res://.godot/imported/Kindess.dialogue-963500f0245723c54348e65cde9c84c4.tres"
+
+[deps]
+
+source_file="res://Dialogue/Kindess.dialogue"
+dest_files=["res://.godot/imported/Kindess.dialogue-963500f0245723c54348e65cde9c84c4.tres"]
+
+[params]
+
+defaults=true

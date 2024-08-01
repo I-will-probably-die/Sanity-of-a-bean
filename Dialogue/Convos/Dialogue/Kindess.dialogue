@@ -1,0 +1,110 @@
+~ start
+
+- Hi again
+	Bean: [[hi.|shut up.|[shake rate=10 level=5]HI[/shake]|..hello again..]]
+	you: I need you to answer my questions, okay?
+	Bean: [[..alright|whatever]]
+	- Why did you kill those people?
+		you: it's okay if you don't want to answer
+		Bean: [[I.. I don't... I don't know.|...|I wish I didn't...]]
+		you: okay.
+		you: how did you kill them?
+		Bean: [[fire...|[shake rate=23 level=12]I BURNT THEM LIKE THE PIGS THEY ARE![/shake]|...]]
+		you: alright..
+		you: I think I've heard enough.
+		Bean: ...
+		you: (I should mark down how he reacted to me being Kind)
+		=> END
+	
+	- Are you okay?
+		Bean: [[no..|I'm.. I'm okay]]
+		you: okay..
+		- are you scared of death
+			Bean: [[..no|...yes..|[shake rate=20 level=10]YOU CAN'T KILL ME![/shake]]]
+			you: Why did you kill those people.
+			Bean: ...
+			you: okay, it's fine.
+			you: I think i've heard enough
+			Bean: [shake rate=20 level=10]IT WAS FUN![/shake]
+			you: it was what?
+			Bean: [shake rate=20 level=10]THE GREATEST THING I EVER SAW![/shake]
+			Bean: [shake rate=20 level=10]THE BLOOD, THEIR CRIES, I WISH I COULD BE THERE AGAIN![/shake]
+			- (stay silent)
+				Bean: I can sense you're growing fearful
+				Bean: Are you sure you are in control?
+				you: ...
+				Bean: ...
+			- (say something)
+				you: are you, are you done.
+				Bean: ...Yeah..
+				you: okay then
+				you: would you like to continue?
+				Bean: ...
+				you: I'll take that as a no.
+			you: (I should mark down how he reacted to me being Kind)
+			=> END
+		
+		- Why did you kill those people?
+			you: it's okay if you don't want to answer
+			Bean: [[I.. I don't... I don't know.|[shake rate=20 level=10]IT WAS FUN![/shake]|I wish I didn't...]]
+			you: okay...
+			you: how did you kill them?
+			Bean: [[fire...|[shake rate=23 level=12]I BURNT THEM LIKE THE PIGS THEY ARE![/shake]|I can't remember]]
+			you: alright..
+			you: I think I've heard enough for now.
+			Bean: ...
+			Bean: okay..
+			you: (I should mark down how he reacted to me being Kind)
+			=> END
+
+- Are you ready to talk?
+	Bean: ...
+	- Hello?
+		Bean: ...
+		you: I'm not here to harm you, you can talk
+		Bean: [[...okay|It's just you and I]]
+		- Are you ready to talk now?
+			Bean: yeah.. sure.
+			you: How did you kill them?
+			Bean: [[fire...|[shake rate=23 level=12]I BURNT THEM LIKE THE PIGS THEY ARE![/shake]|...]]
+			you: alright..
+			you: do you feel any remorse?
+			Bean: [[no.|..yes...|ABSOLUTLY NOT[shake rate=20 level=10][/shake]|If there is a God, would he be judging me right now?]]
+			you: okay..
+			you: I think i've heard enough
+			you: (I should mark down how he reacted to me being Kind)
+			=> END
+		
+		- ...
+			Bean: ...
+			you: I think I'll go.
+			Bean: Why are you being nice?
+			you: oh, just trying not to put a lot on you that's all
+			Bean: Do you remember a time where life was fair?
+			you: I, don't know what you are asking really
+			Bean: ...
+			you: hello?
+			Bean: ...
+			you: okay, I'll leave you to it.
+			you: (I should mark down how he reacted to me being Kind)
+			=> END
+	
+	- if you aren't ready that's fine
+		Bean: [[It's fine..|...]]
+		you: okay.
+		you: are you feeling okay?
+		Bean: ..yeah I think..
+		you: (I don't think this is working.)
+		you: I'll give you some time
+		Bean: Why delay your decision?
+		you: I need to be accurate you know.
+		Bean: for what purpose, more people would be happy I'm dead, sane or not
+		you: I think you need some time by yourself
+		%7 Bean: ...okay...
+		&3 Bean: You won't be in control forever..
+		you: uh, okay..
+		Bean: ...
+		you: (I should mark down how he reacted to me being Kind)
+		=> END
+
+=> END

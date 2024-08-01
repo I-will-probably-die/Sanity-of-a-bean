@@ -1,0 +1,102 @@
+~ start
+
+- alright moron, let's talk
+	Bean: [[Oh shut up.|oh, okay then|[shake rate=20 level=10]SHUT UP OR I'LL KILL YOU TOO[/shake]|...]]
+	you: I'm am going to ask you questions
+	you: and you are here to answer those questions
+	you: Do you understand me.
+	Bean: [[Yea.. yes I do|...mhm...|I don't have to answer crap!]]
+	- Do you reget your actions?
+		Bean: [[Yeah because of this|...mhm.....|[shake rate=20 level=10]NOPE NOT ONE BIT[/shake]|...]]
+		you: okay, how are you feeling now?
+		Bean: [[I'm.. okay I guess|[shake rate=20 level=10]I'M GREAT[/shake]|yeah I feel just great with my life on the line]]
+		you: Now, if I may ask.
+		you: Why did you kill those people
+		Bean: [[...|[shake rate=20 level=10]BECAUSE IT'S FUN![/shake]|I.. I don't... I don't know.|They had it comming.]]
+		you: Okay...
+		you: This has been a good talk, I'll give you a few minutes.
+		Bean: [[...|I can sense you are scared]]
+		you: (I should mark down how he reacted to me being Aggresive)
+		=> END
+	- WHY DID YOU KILL THEM YOU MONSTER!
+		Bean: [[Oh shut up, I'm done talking with you|[shake rate=20 level=10]IT'S NOT THAT HARD TO IMAGIN WHY[/shake]]]
+		you: You will answer my questions!
+		Bean: [shake rate=20 level=10]I'LL LET YOU FIGURE IT OUT! THINK OF IT AS A GAME![/shake]
+		you: you can't just back out!
+		Bean: ...
+		you: Hello??
+		you: (It seems like this isn't gonna work.)
+		you: I'll come back later.
+		Bean: I would give up the world.
+		Bean: to see their life leave their eyes again.
+		- WHAT IS WRONG WITH YOU
+			Bean: Don't be like them.
+			you: We are done here.
+			Bean: okay.
+		- (stay silent)
+			Bean: what?
+			Bean: Are you scared?
+			you: I think we are done for now.
+			Bean: ..okay....You and I aren't so far apart
+		you: (I should mark down how he reacted to me being Aggresive)
+		=> END
+
+- Now, are you gonna talk or what
+	Bean: [[...|Screw off]]
+	you: you know you're running out of time.
+	you: I would advise you talk with me before it's to late
+	Bean: [[[shake rate=20 level=10]SHUT UP OR I'LL KILL YOU TOO[/shake]|What, you just gonna send me off to die?]]
+	you: Just informing you that's all..
+	Bean: ...
+	you: are you gonna stay silent now?
+	Bean: [[Oh shut up, I'm done talking with you|You don't deserve the ability to stand here.]]
+	- What are you on about
+		Bean: I should have taken your life.
+		Bean: so vulnerable at so many point I could've attacked.
+		Bean: I should've taken my opportunity.
+		you: what are you talking about!?
+		you: were you stalking me!?
+		Bean: ...
+		you: ANSWER ME YOU IDIOT!
+		Bean: ...
+		you: (I need to go before I fully lose my cool)
+	- do you want to keep this up?
+		you: we can just stop now.
+		Bean: I can live with that
+		Bean: you're decison only changes my targets.
+	you: (I should mark down how he reacted to me being Aggresive)
+	=> END
+
+- let's not delay this any longer.
+	you: I'm am going to ask you questions
+	you: and you are here to answer those questions
+	you: Do you understand me.
+	Bean: [[Yea.. yes I do|...mhm...|I don't have to answer crap!]]
+	- Do you reget your actions?
+		Bean: [[Yeah because of this|...mhm.....|[shake rate=20 level=10]NOPE[/shake]|...]]
+		you: okay, how are you feeling now?
+		Bean: [[I'm.. okay I guess|[shake rate=20 level=10]I'M GREAT[/shake]|yeah I feel just great with my life on the line]]
+		you: Now, if I may ask.
+		you: Why did you kill those people
+		Bean: [[[shake rate=20 level=10]BECAUSE IT'S FUN![/shake]|I.. I don't... I don't know.]]
+		you: Okay.
+		you: This has been a good talk, I'll give you a few minutes.
+		Bean: ...
+		you: (I should mark down how he reacted to me being Aggresive)
+		=> END
+	- You know why you're here right?
+		Bean: yeah.
+		you: why did you kill them?
+		Bean: [shake rate=20 level=10]IT'S WAS FUN[/shake]
+		you: okay then....
+		you: I'll give you some time.
+		Bean: [shake rate=20 level=10]SCARED ARE WE?[/shake]
+		- I'm just giving time.
+			Bean: in denial, love to see it.
+		- (stay silent)
+			Bean: You are just as equal of a monster as me you know.
+			you: I think we are done here.
+			Bean: okay then.
+		you: (I should mark down how he reacted to me being Aggresive)
+
+=> END

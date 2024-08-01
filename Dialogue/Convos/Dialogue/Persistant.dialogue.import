@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_12"
+type="Resource"
+uid="uid://bhlgonjkd66ny"
+path="res://.godot/imported/Persistant.dialogue-f9cd8aa97f26e72ee79660af65466960.tres"
+
+[deps]
+
+source_file="res://Dialogue/Persistant.dialogue"
+dest_files=["res://.godot/imported/Persistant.dialogue-f9cd8aa97f26e72ee79660af65466960.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,73 @@
+~ start
+
+- why did you kill them
+	%7 Bean: I'm not answering that question
+	%2 Bean: they deserved it.
+	%1 Bean: [shake rate=20 level=10]IT WAS FUN!![/shake]
+	- is there anything you want to talk about?
+		Bean: why I'm here
+		you: what about that?
+		Bean: you don't know why.
+		you: what do you mean? You're here because of what you did
+		Bean: He has other plans for you.
+		you: who is he?
+		Bean: ...
+		you: hello?
+		Bean: you'll know at some point.
+		you: You are going to answer my question.
+		you: Who is this person you are talking about?
+		Bean: ...
+		you: (I doubt he'll answer)
+		you: (I should mark down how he reacted to me trying to be Persistant)
+		=> END
+	- uh, okay.
+		you: is there anything you want to talk about?
+		Bean: you.
+		you: what about me?
+		Bean: you are just like them..
+		Bean: ...
+		you: like who?
+		you: what are you talking about
+		Bean: .....
+		you: ...
+		you: I think I'll go.
+		you: (I should mark down how he reacted to me trying to be Persistant)
+		=> END
+
+- how did you kill them
+	Bean: [[fire...|[shake rate=23 level=12]I BURNT THEM LIKE THE PIGS THEY ARE![/shake]|Jumping straight to the case huh]]
+	you: Okay...
+	Bean: [[...|you gonne push more questions or what|Are you going to continue?]]
+	- ...
+		Bean: [[now someone doesn't wanna talk|I can sense you are scared|...]]
+		you: why did you kill those inoccent people?
+		Bean: [[Oh screw off.|[shake rate=20 level=10]THEY DESERVED IT! THOSE WORTHLESS.. THINGS![/shake]]]
+		you: okay..
+		you: You would like to continue.
+		Bean: Yes.
+		you: okay then.
+		you: What is your reasoning for the murder?
+		Bean: [shake rate=20 level=10]THOSE VILE MONSTERS DESERVED DEATH[/shake]
+		you: whatever the situation was doesn't mean you can just kill people.
+		Bean: [shake rate=30 level=14]NON OCCIDAM, SED VITAM HAURIRE CUPIO.[/shake]
+		you: sir what are you sa-[next=auto]
+		Bean: [shake rate=30 level=14]EORUM MORS BENEDICTIO OCULIS MEIS[/shake]
+		you: I don't know what you're saying
+		Bean: .....
+		you: Hello?
+		Bean: .....
+		you: Hello??
+		Bean: .....
+		you: I guess this is the end of this conversation
+		Bean: .....
+		you: (I should mark down how he reacted to me being Persistant)
+		=> END
+	- We'll move on to the next question
+		you: why did you kill them?
+		Bean: [shake rate=20 level=10]IT'S YOUR MISSION TO FIND OUT[/shake]
+		you: okay..
+		you: would you like to answer any other questions
+		Bean: ...
+		you: I guess not.
+		you: (I should mark down how he reacted to me being Persistant)
+		=> END
