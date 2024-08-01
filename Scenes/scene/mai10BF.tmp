@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://cus71eii27unp"]
+
+[ext_resource type="Texture2D" uid="uid://cbekekblme5qd" path="res://assets/2D/Title.png" id="1_3pe65"]
+[ext_resource type="Script" path="res://script/main_menu.gd" id="1_xa3dp"]
+[ext_resource type="FontFile" uid="uid://bj3bkf4auyduy" path="res://assets/2D/fonts/JMH Typewriter-Black.ttf" id="2_ogs3t"]
+[ext_resource type="PackedScene" uid="uid://rlw68m41mu1a" path="res://scene/Transition.tscn" id="4_refxr"]
+[ext_resource type="AudioStream" uid="uid://chotxf3dtgh0t" path="res://Audio/SFX/Click.mp3" id="5_ytx1l"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_xa3dp")
+next_area = "res://scene/controls.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 49.0
+offset_right = 769.0
+offset_bottom = 720.0
+scale = Vector2(0.310189, 0.218567)
+texture = ExtResource("1_3pe65")
+
+[node name="Play" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -135.0
+offset_top = -61.0
+offset_right = -64.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.72549, 0.72549, 0.72549, 1)
+theme_override_fonts/font = ExtResource("2_ogs3t")
+theme_override_font_sizes/font_size = 25
+text = "Play"
+flat = true
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 65.0
+offset_top = -61.0
+offset_right = 136.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.72549, 0.72549, 0.72549, 1)
+theme_override_fonts/font = ExtResource("2_ogs3t")
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+flat = true
+
+[node name="Transition" parent="." instance=ExtResource("4_refxr")]
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ytx1l")
+volume_db = -2.0
+
+[connection signal="pressed" from="Play" to="Transition" method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

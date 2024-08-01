@@ -1,0 +1,479 @@
+[gd_scene load_steps=28 format=3 uid="uid://co7ywohy1gsqw"]
+
+[ext_resource type="Script" path="res://script/pick_after_k.gd" id="1_c8pk6"]
+[ext_resource type="FontFile" uid="uid://bj3bkf4auyduy" path="res://assets/2D/fonts/JMH Typewriter-Black.ttf" id="2_6sqct"]
+[ext_resource type="Texture2D" uid="uid://c0w47jscr58o0" path="res://assets/2D/Card.png" id="3_cg221"]
+[ext_resource type="Texture2D" uid="uid://dd2rlgguj52ai" path="res://assets/2D/Passive.png" id="4_kjck6"]
+[ext_resource type="Texture2D" uid="uid://bniejnorqprwc" path="res://assets/2D/Aggresion.png" id="6_eh4nr"]
+[ext_resource type="PackedScene" uid="uid://rlw68m41mu1a" path="res://scene/Transition.tscn" id="7_fhrlo"]
+[ext_resource type="Texture2D" uid="uid://c8tkag0y8obud" path="res://assets/2D/Persist.png" id="7_og0sy"]
+[ext_resource type="AudioStream" uid="uid://dwohcp20fr4pr" path="res://Audio/SFX/BUTTON_03.wav" id="8_a7ny6"]
+[ext_resource type="Texture2D" uid="uid://wkpi11fdqc2c" path="res://assets/2D/Partical.png" id="9_5f62x"]
+
+[sub_resource type="Animation" id="Animation_x2hrc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0585045]
+}
+
+[sub_resource type="Animation" id="Animation_fj8v3"]
+resource_name = "Title"
+length = 8.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0585045, 0.0, -0.0522562, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eiafk"]
+_data = {
+"RESET": SubResource("Animation_x2hrc"),
+"Title": SubResource("Animation_fj8v3")
+}
+
+[sub_resource type="Animation" id="Animation_l2ooo"]
+resource_name = "Mouse_Exit_pa"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Passive:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.558153, 0.671582), Vector2(0.525, 0.632)]
+}
+
+[sub_resource type="Animation" id="Animation_npb83"]
+resource_name = "Mouse_Over_pa"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Passive:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.525, 0.48), Vector2(0.558153, 0.671582)]
+}
+
+[sub_resource type="Animation" id="Animation_jrdcm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Passive:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.525, 0.632)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Passive2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(135.802, -64.0394)]
+}
+
+[sub_resource type="Animation" id="Animation_7hc3v"]
+resource_name = "Text_move_pa"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Passive2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(135.802, -88.6699), Vector2(135.802, -64.0394), Vector2(135.802, -88.6699)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ol7nd"]
+_data = {
+"Mouse_Exit_pa": SubResource("Animation_l2ooo"),
+"Mouse_Over_pa": SubResource("Animation_npb83"),
+"RESET": SubResource("Animation_jrdcm"),
+"Text_move_pa": SubResource("Animation_7hc3v")
+}
+
+[sub_resource type="Animation" id="Animation_3ddsu"]
+resource_name = "Mouse_Exit_a"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Agression:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.08138, 0.912233), Vector2(1, 0.848)]
+}
+
+[sub_resource type="Animation" id="Animation_hfalr"]
+resource_name = "Mouse_Over_a"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Agression:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 0.849), Vector2(1.081, 0.917)]
+}
+
+[sub_resource type="Animation" id="Animation_xiss6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Agression:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 0.849)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Agression2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(116.774, -48.1705)]
+}
+
+[sub_resource type="Animation" id="Animation_pibhc"]
+resource_name = "Text_Move_a"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Agression2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(116.774, -77.0728), Vector2(116.774, -48.1705), Vector2(116.774, -77.0728)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tjsgq"]
+_data = {
+"Mouse_Exit_a": SubResource("Animation_3ddsu"),
+"Mouse_Over_a": SubResource("Animation_hfalr"),
+"RESET": SubResource("Animation_xiss6"),
+"Text_Move_a": SubResource("Animation_pibhc")
+}
+
+[sub_resource type="Animation" id="Animation_vw0ao"]
+resource_name = "Mouse_Exit_p"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Persist:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.723101, 0.653336), Vector2(0.68, 0.614)]
+}
+
+[sub_resource type="Animation" id="Animation_shdut"]
+resource_name = "Mouse_Over_p"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Persist:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.679844, 0.576919), Vector2(0.723101, 0.653336)]
+}
+
+[sub_resource type="Animation" id="Animation_dbc63"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Persistense:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(116.774, -77.0728)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Persist:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.68, 0.614)]
+}
+
+[sub_resource type="Animation" id="Animation_lahy0"]
+resource_name = "Text_Move_p"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Persistense:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(116.774, -115.609), Vector2(116.774, -77.0728), Vector2(116.774, -115.609)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3qfi"]
+_data = {
+"Mouse_Exit_p": SubResource("Animation_vw0ao"),
+"Mouse_Over_p": SubResource("Animation_shdut"),
+"RESET": SubResource("Animation_dbc63"),
+"Text_Move_p": SubResource("Animation_lahy0")
+}
+
+[node name="Pick" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_c8pk6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Pickyourplan" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -79.0
+offset_top = 14.0
+offset_right = 82.0
+offset_bottom = 37.0
+grow_horizontal = 2
+rotation = 0.0585045
+pivot_offset = Vector2(80, 12)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6sqct")
+text = "Pick Your Plan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Idle" type="AnimationPlayer" parent="Pickyourplan"]
+libraries = {
+"": SubResource("AnimationLibrary_eiafk")
+}
+autoplay = "Title"
+
+[node name="Passive" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 90.0
+offset_right = 710.0
+offset_bottom = 810.0
+scale = Vector2(0.162, 0.203)
+texture_normal = ExtResource("3_cg221")
+
+[node name="Passive" type="Sprite2D" parent="Passive"]
+position = Vector2(339.506, 334.975)
+rotation = 0.399371
+scale = Vector2(0.525, 0.632)
+texture = ExtResource("4_kjck6")
+
+[node name="Passive2" type="Label" parent="Passive"]
+layout_mode = 0
+offset_left = 135.802
+offset_top = -64.0394
+offset_right = 551.802
+offset_bottom = 30.9606
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6sqct")
+theme_override_font_sizes/font_size = 75
+text = "Passive"
+horizontal_alignment = 1
+
+[node name="Hover_PA" type="AnimationPlayer" parent="Passive"]
+libraries = {
+"": SubResource("AnimationLibrary_ol7nd")
+}
+autoplay = "Text_move_pa"
+playback_default_blend_time = 0.1
+
+[node name="Agression" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 88.0
+offset_right = 940.0
+offset_bottom = 808.0
+scale = Vector2(0.162708, 0.207596)
+texture_normal = ExtResource("3_cg221")
+
+[node name="Agression" type="Sprite2D" parent="Agression"]
+position = Vector2(344.175, 317.925)
+scale = Vector2(1, 0.849)
+texture = ExtResource("6_eh4nr")
+
+[node name="Agression2" type="Label" parent="Agression"]
+layout_mode = 0
+offset_left = 116.774
+offset_top = -48.1705
+offset_right = 597.774
+offset_bottom = 46.8295
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6sqct")
+theme_override_font_sizes/font_size = 75
+text = "Aggresive"
+horizontal_alignment = 1
+
+[node name="Hover_A" type="AnimationPlayer" parent="Agression"]
+libraries = {
+"": SubResource("AnimationLibrary_tjsgq")
+}
+autoplay = "Text_Move_a"
+playback_default_blend_time = 0.01
+
+[node name="Persistent" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 88.0
+offset_right = 826.0
+offset_bottom = 808.0
+scale = Vector2(0.162708, 0.207596)
+texture_normal = ExtResource("3_cg221")
+
+[node name="Persist" type="Sprite2D" parent="Persistent"]
+position = Vector2(347.545, 330.12)
+rotation = -1.66871
+scale = Vector2(0.68, 0.614)
+texture = ExtResource("7_og0sy")
+
+[node name="Persistense" type="Label" parent="Persistent"]
+layout_mode = 0
+offset_left = 116.774
+offset_top = -77.0728
+offset_right = 597.774
+offset_bottom = 17.9272
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_6sqct")
+theme_override_font_sizes/font_size = 75
+text = "Persistense"
+horizontal_alignment = 1
+
+[node name="Hover_P" type="AnimationPlayer" parent="Persistent"]
+libraries = {
+"": SubResource("AnimationLibrary_o3qfi")
+}
+autoplay = "Text_Move_p"
+playback_default_blend_time = 0.01
+
+[node name="Transition" parent="." instance=ExtResource("7_fhrlo")]
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_a7ny6")
+volume_db = -20.0
+
+[node name="Particals" type="CPUParticles2D" parent="."]
+position = Vector2(166, 269)
+scale = Vector2(169.972, 1.49159)
+amount = 20
+lifetime = 4.0
+speed_scale = 0.6
+texture = ExtResource("9_5f62x")
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+gravity = Vector2(0, -50)
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.454902, 0.454902, 0.454902, 0.137255)
+
+[connection signal="mouse_entered" from="Passive" to="." method="_on_passive_mouse_entered"]
+[connection signal="mouse_exited" from="Passive" to="." method="_on_passive_mouse_exited"]
+[connection signal="pressed" from="Passive" to="." method="_on_passive_pressed"]
+[connection signal="animation_finished" from="Passive/Hover_PA" to="." method="_on_hover_pa_animation_finished"]
+[connection signal="mouse_entered" from="Agression" to="." method="_on_agression_mouse_entered"]
+[connection signal="mouse_exited" from="Agression" to="." method="_on_agression_mouse_exited"]
+[connection signal="pressed" from="Agression" to="." method="_on_agression_pressed"]
+[connection signal="animation_finished" from="Agression/Hover_A" to="." method="_on_hover_a_animation_finished"]
+[connection signal="mouse_entered" from="Persistent" to="." method="_on_persistent_mouse_entered"]
+[connection signal="mouse_exited" from="Persistent" to="." method="_on_persistent_mouse_exited"]
+[connection signal="pressed" from="Persistent" to="." method="_on_persistent_pressed"]
+[connection signal="animation_finished" from="Persistent/Hover_P" to="." method="_on_hover_p_animation_finished"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

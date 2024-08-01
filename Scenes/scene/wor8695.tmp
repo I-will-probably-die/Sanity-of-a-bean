@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbfcllh8mrhdb"]
+
+[ext_resource type="PackedScene" uid="uid://mose1acp8f2o" path="res://assets/Models/Enviorment/box.glb" id="1_6hhjt"]
+[ext_resource type="Script" path="res://script/world.gd" id="1_mwcch"]
+[ext_resource type="PackedScene" uid="uid://bjpflib0y4ekc" path="res://scene/player.tscn" id="2_usrln"]
+[ext_resource type="PackedScene" uid="uid://ceq2s2ft1sdd2" path="res://scene/ui.tscn" id="3_r8eum"]
+[ext_resource type="PackedScene" uid="uid://bersywcb4uqw4" path="res://scene/notepad.tscn" id="4_mkgfc"]
+[ext_resource type="PackedScene" uid="uid://6g54sbd1hwmf" path="res://assets/Models/Enviorment/Door.glb" id="5_w1q8r"]
+[ext_resource type="PackedScene" uid="uid://wb767t8pnc15" path="res://assets/Models/Enviorment/Table.glb" id="6_japf8"]
+[ext_resource type="PackedScene" uid="uid://bba7rimnctvgj" path="res://assets/Models/Enviorment/Chair.glb" id="7_thkjn"]
+[ext_resource type="PackedScene" uid="uid://rlw68m41mu1a" path="res://scene/Transition.tscn" id="9_phqy0"]
+[ext_resource type="PackedScene" uid="uid://3bny8jrc7llw" path="res://scene/bean.tscn" id="10_ifyt6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7pm2k"]
+size = Vector3(1, 2.10925, 1)
+
+[node name="World" type="Node3D"]
+transform = Transform3D(50.6348, 0, 0, 0, 50.6348, 0, 0, 0, 50.6348, 1.27679, 24.4119, 21.6941)
+script = ExtResource("1_mwcch")
+next_area = "res://scene/testworld.tscn"
+
+[node name="Player" parent="." instance=ExtResource("2_usrln")]
+transform = Transform3D(-1.27274e-09, 0, -0.0291169, 0, 0.0258023, 0, 0.0291169, 0, -1.27274e-09, -0.203303, -0.419709, -0.43907)
+
+[node name="UI" parent="." instance=ExtResource("3_r8eum")]
+
+[node name="Control" parent="." instance=ExtResource("4_mkgfc")]
+
+[node name="Envi" type="Node3D" parent="."]
+
+[node name="Room" parent="Envi" instance=ExtResource("1_6hhjt")]
+transform = Transform3D(0.0138652, 0, 0, 0, 0.0138652, 0, 0, 0, 0.0138652, -0.165391, -0.471945, -0.479069)
+
+[node name="Door" parent="Envi" instance=ExtResource("5_w1q8r")]
+transform = Transform3D(-1.64388e-09, 0, 0.0376075, 0, 0.0422255, 0, -0.0376075, 0, -1.64388e-09, -0.263121, -0.451866, -0.445309)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Envi/Door"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Envi/Door/StaticBody3D"]
+transform = Transform3D(1, 0, 9.4591e-14, 0, 1, 0, 0, 0, 0.141229, 0, 0.554627, 0)
+shape = SubResource("BoxShape3D_7pm2k")
+
+[node name="Props" type="Node3D" parent="Envi"]
+
+[node name="Table" parent="Envi/Props" instance=ExtResource("6_japf8")]
+transform = Transform3D(-3.84654e-10, 0, 0.00879986, 0, 0.00879986, 0, -0.00879986, 0, -3.84654e-10, -0.173634, -0.44656, -0.442163)
+
+[node name="Chair" parent="Envi/Props" instance=ExtResource("7_thkjn")]
+transform = Transform3D(-1.4489e-09, 0, 0.0331471, 0, 0.0305775, 0, -0.0331471, 0, -1.4489e-09, -0.194474, -0.44262, -0.428095)
+
+[node name="Chair2" parent="Envi/Props" instance=ExtResource("7_thkjn")]
+transform = Transform3D(-1.4489e-09, 0, -0.0331471, 0, 0.0305775, 0, 0.0331471, 0, -1.4489e-09, -0.15456, -0.44262, -0.454163)
+
+[node name="Transition" parent="." instance=ExtResource("9_phqy0")]
+
+[node name="Bean" parent="." instance=ExtResource("10_ifyt6")]
+transform = Transform3D(0.0164291, 0, 0, 0, 0.0164291, 0, 0, 0, 0.0164291, -0.146032, -0.418677, -0.442385)
+
+[connection signal="pressed" from="Control/Buttons/Fin" to="." method="_on_fin_pressed"]
+[connection signal="pressed" from="Control/Buttons/Fin" to="Transition" method="_on_fin_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]
+
+[editable path="Control"]

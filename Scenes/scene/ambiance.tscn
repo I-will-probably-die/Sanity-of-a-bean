@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://df6qxmmnq4q2"]
+
+[ext_resource type="Script" path="res://script/ambiance.gd" id="1_2clul"]
+[ext_resource type="AudioStream" uid="uid://ca7300oh20l8k" path="res://Audio/SFX/Airplane In Flight .mp3" id="1_6i1ik"]
+[ext_resource type="AudioStream" uid="uid://cjyxnu5hmagi6" path="res://Audio/SFX/spooky-ambiance-4-59511.mp3" id="3_6rrhs"]
+[ext_resource type="AudioStream" uid="uid://bu7er8anu3ogd" path="res://Audio/SFX/horror-background-atmosphere-8-215794.mp3" id="4_skc88"]
+
+[node name="Ambiance" type="Node"]
+script = ExtResource("1_2clul")
+
+[node name="Vent" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_6i1ik")
+volume_db = -2.0
+
+[node name="Room" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6rrhs")
+volume_db = -8.0
+
+[node name="Room2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_skc88")
+volume_db = -4.0

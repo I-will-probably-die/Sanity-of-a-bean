@@ -1,0 +1,242 @@
+[gd_scene load_steps=6 format=3 uid="uid://bersywcb4uqw4"]
+
+[ext_resource type="PackedScene" uid="uid://dp8vpx2toe0bd" path="res://assets/Models/Tools/Notpad.glb" id="1_1xmn0"]
+[ext_resource type="Script" path="res://script/notepad.gd" id="1_4wpdy"]
+[ext_resource type="FontFile" uid="uid://bj3bkf4auyduy" path="res://assets/2D/fonts/JMH Typewriter-Black.ttf" id="2_k5hkp"]
+[ext_resource type="Texture2D" uid="uid://5q84ejrypy5q" path="res://assets/2D/Checkbox.png" id="3_64imr"]
+[ext_resource type="Texture2D" uid="uid://dx4nwfyueyggo" path="res://assets/2D/Checkedbox.png" id="3_sj3r8"]
+
+[node name="Control" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4wpdy")
+
+[node name="Notepad" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -132.0
+offset_right = 1069.0
+offset_bottom = 478.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.410677, 0.434094)
+
+[node name="SubViewport" type="SubViewport" parent="Notepad"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1348, 610)
+render_target_update_mode = 0
+
+[node name="Camera3D" type="Camera3D" parent="Notepad/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12440.8, 0, 2.51019)
+cull_mask = 1047553
+current = true
+
+[node name="Notpad" parent="Notepad/SubViewport" instance=ExtResource("1_1xmn0")]
+transform = Transform3D(4.19736, 0, 0, 0, -1.83473e-07, -4.19736, 0, 4.19736, -1.83473e-07, 12440.8, 0.199552, 1.58325)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Notepad/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12440.8, -0.00611869, 2.19223)
+light_energy = 0.2
+light_size = 2.435
+omni_range = 0.5
+
+[node name="Text" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 14.0
+offset_right = 54.0
+offset_bottom = 40.0
+scale = Vector2(0.252315, 0.299685)
+
+[node name="Danger" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 321.027
+offset_top = 113.452
+offset_right = 809.027
+offset_bottom = 232.452
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k5hkp")
+theme_override_font_sizes/font_size = 45
+text = "Bean's behavior to me being Netural"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Scared" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 348.77
+offset_top = 243.589
+offset_right = 481.77
+offset_bottom = 301.589
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k5hkp")
+theme_override_font_sizes/font_size = 45
+text = "Scared"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Angry" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 404.257
+offset_top = 303.652
+offset_right = 537.257
+offset_bottom = 361.652
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k5hkp")
+theme_override_font_sizes/font_size = 45
+text = "Aggressive"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Sad" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 317.064
+offset_top = 377.063
+offset_right = 450.064
+offset_bottom = 435.063
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k5hkp")
+theme_override_font_sizes/font_size = 45
+text = "Sad"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Crazy" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 340.844
+offset_top = 453.81
+offset_right = 473.844
+offset_bottom = 511.81
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k5hkp")
+theme_override_font_sizes/font_size = 45
+text = "Crazy"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Normal" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 332.917
+offset_top = 530.557
+offset_right = 701.917
+offset_bottom = 588.557
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k5hkp")
+theme_override_font_sizes/font_size = 45
+text = "Fairly normal"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Checks" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = -17.0
+offset_top = 9.0
+offset_right = 23.0
+offset_bottom = 49.0
+scale = Vector2(0.315605, 0.296235)
+
+[node name="CheckBox" type="CheckBox" parent="Checks"]
+layout_mode = 0
+offset_left = 659.052
+offset_top = 205.918
+offset_right = 747.052
+offset_bottom = 293.918
+scale = Vector2(0.876297, 0.862401)
+theme_override_icons/checked = ExtResource("3_sj3r8")
+theme_override_icons/unchecked = ExtResource("3_64imr")
+
+[node name="CheckBox2" type="CheckBox" parent="Checks"]
+layout_mode = 0
+offset_left = 662.22
+offset_top = 266.68
+offset_right = 750.22
+offset_bottom = 354.68
+scale = Vector2(0.876297, 0.862401)
+theme_override_icons/checked = ExtResource("3_sj3r8")
+theme_override_icons/unchecked = ExtResource("3_64imr")
+
+[node name="CheckBox3" type="CheckBox" parent="Checks"]
+layout_mode = 0
+offset_left = 662.22
+offset_top = 344.321
+offset_right = 750.22
+offset_bottom = 432.321
+scale = Vector2(0.876297, 0.862401)
+theme_override_icons/checked = ExtResource("3_sj3r8")
+theme_override_icons/unchecked = ExtResource("3_64imr")
+
+[node name="CheckBox4" type="CheckBox" parent="Checks"]
+layout_mode = 0
+offset_left = 662.219
+offset_top = 425.338
+offset_right = 750.219
+offset_bottom = 513.338
+scale = Vector2(0.876297, 0.862401)
+theme_override_icons/checked = ExtResource("3_sj3r8")
+theme_override_icons/unchecked = ExtResource("3_64imr")
+
+[node name="CheckBox5" type="CheckBox" parent="Checks"]
+layout_mode = 0
+offset_left = 662.219
+offset_top = 496.228
+offset_right = 750.219
+offset_bottom = 584.228
+scale = Vector2(0.876297, 0.862401)
+theme_override_icons/checked = ExtResource("3_sj3r8")
+theme_override_icons/unchecked = ExtResource("3_64imr")
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.270626, 0.370528)
+
+[node name="Back" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 642.954
+offset_top = 515.481
+offset_right = 776.954
+offset_bottom = 587.481
+scale = Vector2(1.01081, 0.91451)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.0784314, 0.0392157, 0.0431373, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k5hkp")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+flat = true
+
+[node name="Fin" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 421.246
+offset_top = 515.481
+offset_right = 555.246
+offset_bottom = 587.481
+scale = Vector2(1.01081, 0.91451)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.0784314, 0.0392157, 0.0431373, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_k5hkp")
+theme_override_font_sizes/font_size = 50
+text = "Fin"
+flat = true
+
+[connection signal="pressed" from="Buttons/Back" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Buttons/Fin" to="." method="_on_button_pressed"]

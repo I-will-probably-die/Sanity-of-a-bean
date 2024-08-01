@@ -1,0 +1,260 @@
+[gd_scene load_steps=18 format=3 uid="uid://ie807foywcww"]
+
+[ext_resource type="Script" path="res://script/end.gd" id="1_kcuxp"]
+[ext_resource type="FontFile" uid="uid://bj3bkf4auyduy" path="res://assets/2D/fonts/JMH Typewriter-Black.ttf" id="1_tt15j"]
+[ext_resource type="Texture2D" uid="uid://wmlamc6cgeqw" path="res://assets/2D/Insain.png" id="2_ng71q"]
+[ext_resource type="Texture2D" uid="uid://di04yfj7vxbot" path="res://assets/2D/Pain.png" id="3_j0yy7"]
+[ext_resource type="Texture2D" uid="uid://npy3ieluoff7" path="res://assets/2D/sane.png" id="3_ro7ii"]
+[ext_resource type="Texture2D" uid="uid://bajl665i6t1w" path="res://assets/2D/pain2.png" id="4_mqomm"]
+[ext_resource type="PackedScene" uid="uid://rlw68m41mu1a" path="res://scene/Transition.tscn" id="7_keaat"]
+[ext_resource type="AudioStream" uid="uid://dwohcp20fr4pr" path="res://Audio/SFX/BUTTON_03.wav" id="8_wkxul"]
+[ext_resource type="Texture2D" uid="uid://wkpi11fdqc2c" path="res://assets/2D/Partical.png" id="9_r2a3i"]
+
+[sub_resource type="Animation" id="Animation_mxaje"]
+resource_name = "Hover_Exit_I"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.145, 0.144), Vector2(0.136652, 0.135751)]
+}
+
+[sub_resource type="Animation" id="Animation_evao7"]
+resource_name = "Hover_Over_I"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.136652, 0.135751), Vector2(0.145, 0.144)]
+}
+
+[sub_resource type="Animation" id="Animation_6oqrn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.137, 0.136)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q1t4r"]
+_data = {
+"Hover_Exit_I": SubResource("Animation_mxaje"),
+"Hover_Over_I": SubResource("Animation_evao7"),
+"RESET": SubResource("Animation_6oqrn")
+}
+
+[sub_resource type="Animation" id="Animation_a06py"]
+resource_name = "Hover_Exit_S"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.145, 0.144), Vector2(0.137, 0.136)]
+}
+
+[sub_resource type="Animation" id="Animation_6iejv"]
+resource_name = "Hover_Over_S"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.136652, 0.135751), Vector2(0.145, 0.144)]
+}
+
+[sub_resource type="Animation" id="Animation_rdhaf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.137, 0.136)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_toa8x"]
+_data = {
+"Hover_Exit_S": SubResource("Animation_a06py"),
+"Hover_Over_S": SubResource("Animation_6iejv"),
+"RESET": SubResource("Animation_rdhaf")
+}
+
+[node name="End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kcuxp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_tt15j")
+theme_override_font_sizes/font_size = 25
+text = "Is he insane or not?"
+horizontal_alignment = 1
+
+[node name="Note" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -163.0
+offset_top = 227.0
+offset_right = 162.0
+offset_bottom = 260.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.627451, 0.627451, 0.627451, 1)
+theme_override_fonts/font = ExtResource("1_tt15j")
+theme_override_font_sizes/font_size = 9
+text = "If he's insane he will Not be eligible for the death penalty."
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = 23.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.923459, 0.844575)
+
+[node name="Insane" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 69.0
+offset_right = 743.0
+offset_bottom = 789.0
+scale = Vector2(0.137, 0.136)
+texture_normal = ExtResource("2_ng71q")
+
+[node name="Pain" type="Sprite2D" parent="Insane"]
+z_index = -1
+position = Vector2(526.887, 287.29)
+rotation = -0.0527812
+scale = Vector2(1.43549, 1.26104)
+texture = ExtResource("3_j0yy7")
+
+[node name="Pain2" type="Sprite2D" parent="Insane"]
+z_index = -1
+position = Vector2(761.06, 390.42)
+rotation = -0.604029
+scale = Vector2(0.898148, 0.734437)
+texture = ExtResource("4_mqomm")
+
+[node name="Pain3" type="Sprite2D" parent="Insane"]
+z_index = -1
+position = Vector2(65.8609, 441.985)
+rotation = -1.40953
+scale = Vector2(0.834835, 0.804708)
+texture = ExtResource("4_mqomm")
+
+[node name="Insane_hover" type="AnimationPlayer" parent="Insane"]
+libraries = {
+"": SubResource("AnimationLibrary_q1t4r")
+}
+
+[node name="Sane" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 69.0
+offset_right = 913.0
+offset_bottom = 789.0
+scale = Vector2(0.137, 0.136)
+texture_normal = ExtResource("3_ro7ii")
+
+[node name="sane_hover" type="AnimationPlayer" parent="Sane"]
+libraries = {
+"": SubResource("AnimationLibrary_toa8x")
+}
+
+[node name="Transition" parent="." instance=ExtResource("7_keaat")]
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_wkxul")
+volume_db = -20.0
+
+[node name="Particals" type="CPUParticles2D" parent="."]
+position = Vector2(166, 269)
+scale = Vector2(169.972, 1.49159)
+amount = 20
+lifetime = 4.0
+speed_scale = 0.6
+texture = ExtResource("9_r2a3i")
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+gravity = Vector2(0, -50)
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.454902, 0.454902, 0.454902, 0.137255)
+
+[connection signal="mouse_entered" from="Insane" to="." method="_on_insane_mouse_entered"]
+[connection signal="mouse_exited" from="Insane" to="." method="_on_insane_mouse_exited"]
+[connection signal="pressed" from="Insane" to="." method="_on_insane_pressed"]
+[connection signal="mouse_entered" from="Sane" to="." method="_on_sane_mouse_entered"]
+[connection signal="mouse_exited" from="Sane" to="." method="_on_sane_mouse_exited"]
+[connection signal="pressed" from="Sane" to="." method="_on_sane_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

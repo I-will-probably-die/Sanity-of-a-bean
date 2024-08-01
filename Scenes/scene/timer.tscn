@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6kb2bd2leij2"]
+
+[ext_resource type="Script" path="res://script/timer2.gd" id="1_ftqll"]
+[ext_resource type="AudioStream" uid="uid://c4u8rn0jy2w6b" path="res://Audio/SFX/CrawlVent.mp3" id="2_10ylw"]
+
+[node name="Timer" type="Timer"]
+wait_time = 14.0
+script = ExtResource("1_ftqll")
+
+[node name="Crawl" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_10ylw")
+bus = &"SFX"
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

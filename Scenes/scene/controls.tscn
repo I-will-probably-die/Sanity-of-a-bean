@@ -1,0 +1,214 @@
+[gd_scene load_steps=6 format=3 uid="uid://drd0rqvwnp0kl"]
+
+[ext_resource type="FontFile" uid="uid://bj3bkf4auyduy" path="res://assets/2D/fonts/JMH Typewriter-Black.ttf" id="1_w0dtp"]
+[ext_resource type="Script" path="res://script/controls.gd" id="1_ws72q"]
+[ext_resource type="PackedScene" uid="uid://rlw68m41mu1a" path="res://scene/Transition.tscn" id="2_arfsk"]
+[ext_resource type="AudioStream" uid="uid://dwohcp20fr4pr" path="res://Audio/SFX/BUTTON_03.wav" id="4_usgab"]
+[ext_resource type="Texture2D" uid="uid://wkpi11fdqc2c" path="res://assets/2D/Partical.png" id="5_hfnd8"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ws72q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -65.0
+offset_top = 9.0
+offset_right = 70.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+text = "Controls"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="C1" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 53.0
+offset_right = 5.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+theme_override_font_sizes/font_size = 12
+text = "Moving up response:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A1" type="Label" parent="C1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 100.0
+offset_right = 276.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+theme_override_font_sizes/font_size = 12
+text = "W&S, UP&DOWN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="C2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 90.0
+offset_right = 5.0
+offset_bottom = 113.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+theme_override_font_sizes/font_size = 12
+text = "Confirming response"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A1" type="Label" parent="C2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 100.0
+offset_right = 276.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+theme_override_font_sizes/font_size = 12
+text = "E, Enter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="C3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 125.0
+offset_right = 5.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+theme_override_font_sizes/font_size = 12
+text = "Restart (if needed)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A1" type="Label" parent="C3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 100.0
+offset_right = 276.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+theme_override_font_sizes/font_size = 12
+text = "R"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="C4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 157.0
+offset_right = 5.0
+offset_bottom = 180.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+theme_override_font_sizes/font_size = 12
+text = "Look around"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A1" type="Label" parent="C4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 100.0
+offset_right = 276.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+theme_override_font_sizes/font_size = 12
+text = "Mouse"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -81.0
+offset_top = -35.0
+offset_right = 76.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_hover_color = Color(0.737255, 0.737255, 0.737255, 1)
+theme_override_fonts/font = ExtResource("1_w0dtp")
+text = "Continue"
+flat = true
+
+[node name="Transition" parent="." instance=ExtResource("2_arfsk")]
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_usgab")
+volume_db = -20.0
+
+[node name="Particals" type="CPUParticles2D" parent="."]
+position = Vector2(166, 269)
+scale = Vector2(169.972, 1.49159)
+amount = 20
+lifetime = 4.0
+speed_scale = 0.6
+texture = ExtResource("5_hfnd8")
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+gravity = Vector2(0, -50)
+scale_amount_min = 0.3
+scale_amount_max = 0.5
+color = Color(0.454902, 0.454902, 0.454902, 0.137255)
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="animation_finished" from="Transition" to="." method="_on_transition_animation_finished"]

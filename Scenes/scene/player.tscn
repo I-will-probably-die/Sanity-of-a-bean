@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://bjpflib0y4ekc"]
+
+[ext_resource type="Script" path="res://script/player.gd" id="1_3o8d1"]
+[ext_resource type="Script" path="res://script/Camera.gd" id="2_o05r4"]
+[ext_resource type="PackedScene" uid="uid://dp8vpx2toe0bd" path="res://assets/Models/Tools/Notpad.glb" id="3_85lof"]
+[ext_resource type="Shader" path="res://assets/Shaders/Jitter.gdshader" id="4_mkhd6"]
+[ext_resource type="Texture2D" uid="uid://dgky2mgg84edf" path="res://assets/Models/Tools/Textures/Paper_baseColor_written.jpeg" id="4_pgdfm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1wdux"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nmaky"]
+radius = 0.347315
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jolo8"]
+render_priority = 0
+shader = ExtResource("4_mkhd6")
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/albedo = ExtResource("4_pgdfm")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q4c0r"]
+material = SubResource("ShaderMaterial_jolo8")
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.727895, 0)
+script = ExtResource("1_3o8d1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+layers = 2
+mesh = SubResource("CapsuleMesh_1wdux")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_nmaky")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.528616, 0)
+script = ExtResource("2_o05r4")
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="Notepad" parent="Head" instance=ExtResource("3_85lof")]
+transform = Transform3D(3.29421, 0, 0, 0, 1.33998, -3.00937, 0, 3.00937, 1.33998, 0.367187, -0.35949, -0.885301)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Notepad"]
+transform = Transform3D(0.0523124, 0, 0, 0, 0.0489036, 5.96046e-08, 0, -3.53903e-08, 0.0721757, 0.00130926, 0.0939423, 0.0512164)
+mesh = SubResource("PlaneMesh_q4c0r")
+
+[node name="Interact" type="RayCast3D" parent="Head"]
+transform = Transform3D(1.205, 0, 0, 0, -5.26722e-08, -1.205, 0, 1.205, -5.26722e-08, 0, 0, 0)
+collision_mask = 2
+hit_back_faces = false
+collide_with_areas = true
+
+[connection signal="visibility_changed" from="Head/Interact" to="." method="_on_interact_visibility_changed"]
